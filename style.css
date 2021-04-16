@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.home-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+
+/* Homepage */
+.logo-container{
+ width: 100%;
+ height: 50%;
+ display: flex;
+ align-items: center;
+ align-self: center;
+ text-align: center;
+}
+
+.logo-container h1{
+    background-image: url(patterns.jpeg);
+    background-repeat: repeat;
+   -webkit-background-clip: text;
+    background-clip: text;
+   -webkit-text-fill-color: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 3000%;
+    margin: 0 auto;
+}
+
+.btn-container {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    top: 75%;
+    right: 10%;
+}
+
+.btn-container p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: #000;
+}
+
+.btn-container .btn {
+    margin: 10px 0;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: plum;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-container .btn a {
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.btn-container .btn i {
+    font-size: 28px;
+    color: #fff;
+    padding: 5px 20px 5px 5px;
+    transition: padding 0.5s;
+}
+
+ .btn:hover > i {
+    padding: 5px 5px 5px 5px;
+}
+
+.footer-container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    position: absolute;
+    bottom: 2%;
+    opacity: 0.2;
+}
+
+.footer-container p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+/* body p {
+    background-image: url(/patterns.jpeg);
+    background-repeat: repeat;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 120px;
+} */

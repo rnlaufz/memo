@@ -17,9 +17,28 @@ $query = mysqli_query($connectQuery, "INSERT INTO users VALUES('', 'John Doe', '
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEMO</title>
+    <link rel="stylesheet" href="style.css">
+    <title>MEMO | Quiz Yourself!</title>
 </head>
 <body>
-    <h3>MEMO IN CREATION</h3>
+    <div class="home-container">
+    <div class="logo-container">
+    <h1>MEMO</h1>
+    </div>
+    <div class="btn-container">
+    <p>Quiz Yourself!</p>
+    <div class="btn">
+    <a href="register.php">Start Now</a>
+    <i class="fas fa-long-arrow-alt-right"></i>
+    </div>
+    
+    </div>
+    <div class="footer-container">
+        <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ</p>
+    </div>
+    </div>
+
+    <!-- Import Font Awesome -->
+    <script src="https://kit.fontawesome.com/415bbac1bd.js" crossorigin="anonymous"></script>
 </body>
 </html>
