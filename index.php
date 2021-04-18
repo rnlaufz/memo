@@ -17,8 +17,9 @@ $query = mysqli_query($connectQuery, "INSERT INTO users VALUES('', 'John Doe', '
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="question.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>MEMO | Quiz Yourself!</title>
+    <title>MEMO | Quiz Yourself</title>
 </head>
 <body>
     <div class="home-container">
@@ -26,7 +27,7 @@ $query = mysqli_query($connectQuery, "INSERT INTO users VALUES('', 'John Doe', '
     <h1>MEMO</h1>
     </div>
     <div class="btn-container">
-    <p>Quiz Yourself!</p>
+    <p>Quiz Yourself</p>
     <div class="btn">
     <a href="register.php">Start Now</a>
     <i class="fas fa-long-arrow-alt-right"></i>

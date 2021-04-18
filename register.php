@@ -8,18 +8,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="question.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <title>MEMO | Register</title>
 </head>
 <body>
-  <div class="container">
+  <div class="auth-container">
   <div class="nav-container">
+    <div>
+    <p class="logo">MEMO</p>
+    </div>
+    <div>
   <ul>
-  <li><p class="logo">MEMO</p></li>
-  <ul>
-  <li><p>Sign In</p></li>
-  <li><p>Sign UP</p></li>
+  <li><a href="login.php">Sign In</a></li>
+  <li><a href="register.php">Sign Up</a></li>
   </ul>
-  </ul>
+</div>
   </div>
   <div class="form-container">
   <form action="">
@@ -44,6 +48,9 @@
   </div>
   </form>
   </div>
+  <div class="footer-container">
+        <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ</p>
+    </div>
   </div>  
 </body>
 </html>
