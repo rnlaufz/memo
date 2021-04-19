@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="question.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>MEMO | Register</title>
+    <title>MEMO | Login</title>
 </head>
 <body>
   <div class="auth-container">
@@ -27,11 +27,9 @@
   </div>
   <div class="form-container">
   <form action="">
-  <h3>MEMO | Sign Up</h3>
+  <h3>MEMO | Sign In</h3>
   <div class="inputs">
-  <div class="form-control">
-  <input name="regName" type="text" placeholder="Name">
-  </div>
+ 
  
   <div class="form-control">
   <input name="regEmail" type="email" placeholder="Email">
@@ -41,17 +39,15 @@
   <input name="regPasswordOne" type="password" placeholder="Password">
   </div>
   
-  <div class="form-control">
-  <input name="regPasswordTwo" type="password" placeholder="Confirm Password">
-  </div>
+ 
   
   <div class="form-control">
-  <input name="signUp" type="submit" value="Submit">
+  <input name="signIn" type="submit" value="Submit">
   </div>
   </div>
- <p>Already have an account? 
+ <p>Do not have an account? 
  <br>
- <a href="login.php">Sign In</a></p> 
+ <a href="register.php">Sign Up</a></p> 
   </form>
   </div>
   <div class="footer-container">
