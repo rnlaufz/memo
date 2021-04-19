@@ -27,6 +27,8 @@
   </div>
   <div class="form-container">
   <form action="">
+  <h3>MEMO | Sign Up</h3>
+  <div class="inputs">
   <div class="form-control">
   <input name="regName" type="text" placeholder="Name">
   </div>
@@ -46,6 +48,10 @@
   <div class="form-control">
   <input name="signUp" type="submit" value="Submit">
   </div>
+  </div>
+ <p>Already have an account? 
+ <br>
+ <a href="#">Sign In</a></p> 
   </form>
   </div>
   <div class="footer-container">
