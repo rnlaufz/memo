@@ -1,5 +1,14 @@
 <!-- PHP Block -->
-<?php?>
+<?php
+
+// Connection string
+$connectQuery = mysqli_connect("localhost", "root", "", "memo");
+// Check DB connection
+if(mysqli_connect_errno()){
+  echo "Failed to connect to database" + mysqli_connect_errno();
+};
+
+?>
 
 <!-- HTML Block -->
 <!DOCTYPE html>
@@ -32,11 +41,11 @@
  
  
   <div class="form-control">
-  <input name="regEmail" type="email" placeholder="Email">
+  <input name="logEmail" type="email" placeholder="Email">
   </div>
   
   <div class="form-control">
-  <input name="regPasswordOne" type="password" placeholder="Password">
+  <input name="logPasswordOne" type="password" placeholder="Password">
   </div>
   
  
