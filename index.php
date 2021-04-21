@@ -7,8 +7,6 @@ if(mysqli_connect_errno()){
     echo "Failed to connect: " - mysqli_connect_errno();
 };
 
-$query = mysqli_query($connectQuery, "INSERT INTO users VALUES('', 'John Doe', 'johnDoe@gmail.com', '1234567Fs!' )");
-
 ?>
 
 <!DOCTYPE html>

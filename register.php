@@ -7,6 +7,52 @@ if(mysqli_connect_errno()){
   echo "Failed to connect to database" + mysqli_connect_errno();
 };
 
+// Declare form variables
+$name = '';
+$email = '';
+$passwordOne = '';
+$passwordTwo = ''; 
+$date = ''; // date of register
+$errorArray = ''; // array for errors
+
+
+if(isset($_POST['registerButton'])){
+  // Registration form values
+  // Remove html tags and whitespaces
+  $name = strip_tags($_POST['regName']);
+  $name = str_replace(' ', '', $name); 
+  $name = ucfirst(strtolower($name)); // Uppercase the first letter
+
+  $email = strip_tags($_POST['regEmail']);
+  $email = str_replace(' ', '', $email);
+
+  $passwordOne = strip_tags($_POST['regPasswordOne']);
+  $passwordTwo = strip_tags($_POST['regPasswordTwo']);
+
+  $date = date("Y-m-d"); //Assign date
+
+   // Check if email is valid
+   if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+      $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+      // Check if email already exists
+      $email_check = mysqli_query($connectQuery, "SELECT email FROM users WHERE email = '$email'");
+
+      // Count number of rows returned
+      $num_rows = mysqli_num_rows($email_check);
+      if($num_rows > 0){
+        echo "Email already exists";
+      };
+   };
+
+  // Check if passwods match 
+  if($passwordOne == $passwordTwo){
+   
+    echo "Match";
+  } else {
+    echo "Passwords do not match";
+  }
+}
 
 
 ?>
@@ -36,27 +82,27 @@ if(mysqli_connect_errno()){
 </div>
   </div>
   <div class="form-container">
-  <form action="">
+  <form action="register.php" method="POST">
   <h3>MEMO | Sign Up</h3>
   <div class="inputs">
   <div class="form-control">
-  <input name="regName" type="text" placeholder="Name">
+  <input name="regName" type="text" placeholder="Name" required>
   </div>
  
   <div class="form-control">
-  <input name="regEmail" type="email" placeholder="Email">
+  <input name="regEmail" type="email" placeholder="Email" required>
   </div>
   
   <div class="form-control">
-  <input name="regPasswordOne" type="password" placeholder="Password">
+  <input name="regPasswordOne" type="password" placeholder="Password" required>
   </div>
   
   <div class="form-control">
-  <input name="regPasswordTwo" type="password" placeholder="Confirm Password">
+  <input name="regPasswordTwo" type="password" placeholder="Confirm Password" required>
   </div>
   
   <div class="form-control">
-  <input name="signUp" type="submit" value="Submit">
+  <input name="registerButton" type="submit" value="Submit">
   </div>
   </div>
  <p>Already have an account? 
