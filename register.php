@@ -1,5 +1,9 @@
 <!-- PHP Block -->
 <?php
+
+// Start session
+session_start();
+
 // Connection string
 $connectQuery = mysqli_connect("localhost", "root", "", "memo");
 // Check DB connection
@@ -13,7 +17,8 @@ $email = '';
 $passwordOne = '';
 $passwordTwo = ''; 
 $date = ''; // date of register
-$errorArray = ''; // array for errors
+$errorArray = array(); // array for errors
+
 
 
 if(isset($_POST['registerButton'])){
@@ -31,6 +36,10 @@ if(isset($_POST['registerButton'])){
 
   $date = date("Y-m-d"); //Assign date
 
+  // Session variables
+  $_SESSION['regName'] = $name;
+  $_SESSION['regEmail'] = $email;  
+
    // Check if email is valid
    if(filter_var($email, FILTER_VALIDATE_EMAIL)){
       $email = filter_var($email, FILTER_VALIDATE_EMAIL);
@@ -41,7 +50,7 @@ if(isset($_POST['registerButton'])){
       // Count number of rows returned
       $num_rows = mysqli_num_rows($email_check);
       if($num_rows > 0){
-        echo "Email already exists";
+        array_push($errorArray,"Email already exists");
       };
    };
 
@@ -51,14 +60,12 @@ if(isset($_POST['registerButton'])){
     if(preg_match('/^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/', $passwordOne)){
       echo "Correct";
     } else {
-      echo 'Password must have at least one uppercase letter, one lowercase letter, number and a special character';
+      array_push($errorArray,'Password must have at least one uppercase letter, one lowercase letter, number and a special character'); 
     }
   } else {
-    echo "Passwords do not match";
+    array_push($errorArray,"Passwords do not match");
   }
 }
-
-
 ?>
 
 <!-- HTML Block -->
@@ -74,6 +81,7 @@ if(isset($_POST['registerButton'])){
 </head>
 <body>
   <div class="auth-container">
+  <!-- Navigation -->
   <div class="nav-container">
     <div>
     <p class="logo">MEMO</p>
@@ -85,16 +93,36 @@ if(isset($_POST['registerButton'])){
   </ul>
 </div>
   </div>
+  <!-- Show errors if any -->
+  <?php
+    if(in_array("Email already exists", $errorArray)) echo "<span class='error'>Email already exists <br></span>";
+    if(in_array("Password must have at least one uppercase letter, one lowercase letter, number and a special character", $errorArray)) echo "<span class='error'>Password must have at least one uppercase letter, one lowercase letter, number and a special character <br></span>";
+    if(in_array("Passwords do not match", $errorArray)) echo "<span class='error'>Passwords do not match <br></span>";
+  ?>
+
+  <!-- Form -->
   <div class="form-container">
   <form action="register.php" method="POST">
   <h3>MEMO | Sign Up</h3>
   <div class="inputs">
   <div class="form-control">
-  <input name="regName" type="text" placeholder="Name" required>
+  <input name="regName" type="text" placeholder="Name" 
+  value="<?php
+    if(isset($_SESSION['regName'])){
+      echo $_SESSION['regName'];
+    }
+  ?>" 
+  required>
   </div>
  
   <div class="form-control">
-  <input name="regEmail" type="email" placeholder="Email" required>
+  <input name="regEmail" type="email" placeholder="Email"
+  value="<?php
+    if(isset($_SESSION['regEmail'])){
+      echo $_SESSION['regEmail'];
+    }
+  ?>" 
+   required>
   </div>
   
   <div class="form-control">
@@ -114,9 +142,13 @@ if(isset($_POST['registerButton'])){
  <a href="login.php">Sign In</a></p> 
   </form>
   </div>
+
+  <!-- Footer -->
   <div class="footer-container">
         <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ</p>
     </div>
-  </div>  
+  </div> 
+
+  <script src="app.js"></script> 
 </body>
 </html>
