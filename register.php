@@ -48,7 +48,11 @@ if(isset($_POST['registerButton'])){
   // Check if passwods match 
   if($passwordOne == $passwordTwo){
    
-    echo "Match";
+    if(preg_match('/^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/', $passwordOne)){
+      echo "Correct";
+    } else {
+      echo 'Password must have at least one uppercase letter, one lowercase letter, number and a special character';
+    }
   } else {
     echo "Passwords do not match";
   }
