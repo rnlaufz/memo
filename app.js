@@ -1,10 +1,10 @@
-const errors = document.querySelectorAll('.error')
+const errors = document.querySelectorAll('.error');
+const messages = document.querySelectorAll('.message');
 
-// Hide errors in 5 sec
+// Hide errors in 3 sec
 function hideErrors() {
     
     setTimeout(() => {
-        //    return errors[i].style.display = "none" 
         return errors.forEach((error) => {
            return error.style.display = 'none'
         })
@@ -13,6 +13,15 @@ function hideErrors() {
 
 }
 
+// Hide messages in 3 sec
+function hideMessages() {
+    setTimeout(() => {
+        return messages.forEach((message) => {
+           return message.style.display = 'none'
+        })
+        
+}, 3000)
 
-
-hideErrors()
+}
+hideErrors();
+hideMessages();

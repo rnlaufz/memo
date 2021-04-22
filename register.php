@@ -18,6 +18,7 @@ $passwordOne = '';
 $passwordTwo = ''; 
 $date = ''; // date of register
 $errorArray = array(); // array for errors
+$messageArray = array(); // array for messages
 
 
 
@@ -58,12 +59,28 @@ if(isset($_POST['registerButton'])){
   if($passwordOne == $passwordTwo){
    
     if(preg_match('/^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/', $passwordOne)){
-      echo "Correct";
+    
     } else {
       array_push($errorArray,'Password must have at least one uppercase letter, one lowercase letter, number and a special character'); 
     }
   } else {
     array_push($errorArray,"Passwords do not match");
+  }
+
+  if(empty($errorArray)){
+    // Password encryption
+    $salt = 'ksjbuiu5nik3445fm!fcHFRDCW^I*VFRNSW$';
+    $saltPassword = $salt.$passwordOne;
+    $passwordOne = md5($saltPassword);
+
+    $query = mysqli_query($connectQuery, "INSERT INTO users VALUES('', '$name', '$email', '$passwordOne', '$date', '0')");
+
+    // Clear sessions
+    $_SESSION['regName'] = '';
+    $_SESSION['regEmail'] = ''; 
+
+    // Show success message
+    array_push($messageArray, "Registration successfull. You may sign in now.");
   }
 }
 ?>
@@ -98,6 +115,7 @@ if(isset($_POST['registerButton'])){
     if(in_array("Email already exists", $errorArray)) echo "<span class='error'>Email already exists <br></span>";
     if(in_array("Password must have at least one uppercase letter, one lowercase letter, number and a special character", $errorArray)) echo "<span class='error'>Password must have at least one uppercase letter, one lowercase letter, number and a special character <br></span>";
     if(in_array("Passwords do not match", $errorArray)) echo "<span class='error'>Passwords do not match <br></span>";
+    if(in_array("Registration successfull. You may sign in now.", $messageArray)) echo "<span class='message'>Registration successfull. You may sign in now.<br></span>";
   ?>
 
   <!-- Form -->

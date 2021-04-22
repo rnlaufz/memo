@@ -20,13 +20,16 @@ html, body {
 }
 
 /* Utility */
-.error {
+.error, .message {
     display: block;
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    padding: 20px;
+    padding: 20px 0;
     color: #d31a90;
+}
+.message {
+    color: #33d31a;
 }
 
 
