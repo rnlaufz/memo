@@ -13,7 +13,7 @@ if(isset($_POST['signIn'])){
   $email = str_replace(' ', '', $email);
   $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
-  echo '12345';
+
 // Session variables
   $_SESSION['logEmail'] = $email;  
 
@@ -28,7 +28,7 @@ if(isset($_POST['signIn'])){
       $row = mysqli_fetch_array($checkDBQuery);
 
     //   Store user id
-      $_SESSION['id'] = $userID;
+      $_SESSION['user_identifier'] = $userKey;
       header('Location: dashboard.php');
       exit();
   }

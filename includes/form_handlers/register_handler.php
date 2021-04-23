@@ -5,6 +5,7 @@ $name = '';
 $email = '';
 $passwordOne = '';
 $passwordTwo = ''; 
+$userKey = '';
 $date = ''; // date of register
 $errorArray = array(); // array for errors
 $messageArray = array(); // array for messages
@@ -62,7 +63,20 @@ if(isset($_POST['registerButton'])){
     $saltPassword = $salt.$passwordOne;
     $passwordOne = md5($saltPassword);
 
-    $query = mysqli_query($connectQuery, "INSERT INTO users VALUES('', '$name', '$email', '$passwordOne', '$date', '0')");
+    // Generate use identifier
+    function generateKey($length = 90) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomKey = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomKey .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomKey;
+    }
+
+   $userKey = generateKey();
+
+    $query = mysqli_query($connectQuery, "INSERT INTO users VALUES('', '$userKey','$name', '$email', '$passwordOne', '$date', '0')");
 
     // Clear sessions
     $_SESSION['regName'] = '';
