@@ -1,7 +1,7 @@
 <!-- PHP Block -->
 <?php
 require 'config/config.php';
-
+require 'includes/form_handlers/login_handler.php';
 ?>
 
 <!-- HTML Block -->
@@ -39,7 +39,7 @@ require 'config/config.php';
   </div>
   
   <div class="form-control">
-  <input name="logPasswordOne" type="password" placeholder="Password">
+  <input name="logPassword" type="password" placeholder="Password">
   </div>
   
  
