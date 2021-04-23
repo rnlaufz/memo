@@ -114,7 +114,7 @@ html, body {
 }
 
 .logo-container h1{
-    background-image: url(patterns.jpeg);
+    background-image: url(img/patterns.jpeg);
     background-repeat: repeat;
    -webkit-background-clip: text;
     background-clip: text;
@@ -159,6 +159,7 @@ html, body {
 }
 
 .btn-container .btn a {
+    width: 100%;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -170,6 +171,8 @@ html, body {
 }
 
 .btn-container .btn i {
+    
+
     font-size: 28px;
     color: #fff;
     padding: 5px 20px 5px 5px;

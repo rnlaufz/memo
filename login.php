@@ -1,12 +1,6 @@
 <!-- PHP Block -->
 <?php
-
-// Connection string
-$connectQuery = mysqli_connect("localhost", "root", "", "memo");
-// Check DB connection
-if(mysqli_connect_errno()){
-  echo "Failed to connect to database" + mysqli_connect_errno();
-};
+require 'config/config.php';
 
 ?>
 
@@ -17,8 +11,8 @@ if(mysqli_connect_errno()){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="question.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="styles/img/question.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
     <title>MEMO | Login</title>
 </head>
 <body>
@@ -35,7 +29,7 @@ if(mysqli_connect_errno()){
 </div>
   </div>
   <div class="form-container">
-  <form action="">
+  <form action="login.php" method="POST">
   <h3>MEMO | Sign In</h3>
   <div class="inputs">
  
