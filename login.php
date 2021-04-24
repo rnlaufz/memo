@@ -39,11 +39,16 @@ require 'includes/form_handlers/login_handler.php';
  
  
   <div class="form-control">
-  <input name="logEmail" type="email" placeholder="Email">
+  <input name="logEmail" type="email" placeholder="Email" required 
+  value="<?php
+    if(isset($_SESSION['logEmail'])){
+      echo $_SESSION['logEmail'];
+    }
+  ?>">
   </div>
   
   <div class="form-control">
-  <input name="logPassword" type="password" placeholder="Password">
+  <input name="logPassword" type="password" placeholder="Password" required>
   </div>
   
  
