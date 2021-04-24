@@ -31,6 +31,8 @@ if(isset($_POST['signIn'])){
       $_SESSION['user_identifier'] = $userKey;
       header('Location: dashboard.php');
       exit();
+  } else {
+    array_push($errorArray, "Wrong password or email");
   }
 
  
