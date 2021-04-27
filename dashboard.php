@@ -9,6 +9,46 @@
     <title>MEMO | Dashboard</title>
 </head>
 <body>
-    <h1>Creation in progress...</h1>
+<div class="dashboard-container">
+    <!-- Navigation -->
+    <div class="nav-container">
+    <div>
+    <p class="logo">Hi <span class="name">Name</span>! Up for a quiz?</p>
+    </div>
+    <div>
+  <ul>
+  <li><a href="#"><i class="fas fa-plus"></i></a></li>
+  <li><a href="#"><i class="fas fa-cog"></i></a></li>
+  <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
+  </ul>
+</div>
+  </div>
+<!-- Main content -->
+<div class="card-container">
+    <div class="card">
+        <!-- Flip button -->
+        <div class="flip"><button><i class="fas fa-redo-alt"></i></button></div>
+        <!-- Card content -->
+        <!-- Tempo hardcode -->
+        <p>Question?</p>
+    </div>
+
+
+<div class="card-navigation"> 
+<div class="num-cards">1 of 10</div>
+<div class="num-arrows">
+<div id="prev"><i class="fas fa-arrow-left"></i></div>
+<div id="next"><i class="fas fa-arrow-right"></i></div>
+</div>
+</div> 
+</div>
+<!-- Footer -->
+  <div class="footer-container">
+        <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ</p>
+    </div>
+</div>
+
+ <!-- Import Font Awesome -->
+ <script src="https://kit.fontawesome.com/415bbac1bd.js" crossorigin="anonymous"></script>
 </body>
 </html>

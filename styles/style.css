@@ -290,6 +290,79 @@ html, body {
     font-weight: bold;
 }
 
+/* Dashboard */
+.dashboard-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.dashboard-container .nav-container .logo {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card-container{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    box-shadow: 0 0 10px #c465d3;
+    align-self: center;
+    border-radius: 5px;
+}
+
+.flip {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.flip button {
+    border: none;
+    background: transparent;
+}
+
+.flip button i, .num-arrows i {
+    font-size: 18px;
+    color: #ba1ad3;
+}
+
+/* Tempo styling code */
+.card p {
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+
+}
+
+.card-navigation {
+    width: auto;
+    height: auto;
+    padding: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.num-arrows {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
 
 
 /* Footer */

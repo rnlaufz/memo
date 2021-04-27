@@ -17,6 +17,7 @@ require 'includes/form_handlers/login_handler.php';
 </head>
 <body>
   <div class="auth-container">
+  <!-- Navigation -->
   <div class="nav-container">
     <div>
     <p class="logo">MEMO</p>
