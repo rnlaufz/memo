@@ -83,7 +83,8 @@ if(isset($_POST['registerButton'])){
     $_SESSION['regEmail'] = ''; 
 
     // Show success message
-    array_push($messageArray, "Registration successfull. You may sign in now.");
+    array_push($messageArray, "Registration successfull.");
+    header("Location: dashboard.php");
   }
 }
 
