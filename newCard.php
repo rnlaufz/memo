@@ -17,13 +17,33 @@
     </div>
     <div>
   <ul>
-  <li><a class="tooltip" href="dashboard.php"><i class="fas fa-home"></i></a></li>
-  <li><a class="tooltip" href="settings.php"><i class="fas fa-cog"></i></a></li>
-  <li><button class="tooltip"><i class="fas fa-sign-out-alt"></i></button></li>
+  <li><a href="dashboard.php"><i class="fas fa-home"></i></a></li>
+  <li><a href="settings.php"><i class="fas fa-cog"></i></a></li>
+  <li><button><i class="fas fa-sign-out-alt"></i></button></li>
   </ul>
 </div>
   </div>
   <!-- Main content -->
+  <div class="form-container">
+  <form action="newCard.php" method="POST">
+  <div class="inputs">
+  <div class="form-control">
+  <input name="question" type="text" placeholder="Question" required>
+  </div>
+  <div class="form-control">
+  <input name="answer" type="text" placeholder="Answer" required>
+  </div>
+  <div class="form-control">
+  <input name="addCard" type="submit" value="Add">
+  </div>
+  </div>
+  </form>
+  </div>
+ <!-- Footer -->
+ <div class="footer-container">
+        <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ</p>
+    </div>
+  </div>
     </div>
 
     <!-- Import font awesome -->
