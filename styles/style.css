@@ -32,36 +32,6 @@ html, body {
     color: #33d31a;
 }
 
-
-/* Tooltips */
-.tooltip {
-    position: relative;
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-  }
-  
-  /* Tooltip text */
-  .tooltip .tooltip-text {
-    visibility: hidden;
-    background-color: transparent;
-    color: #fff;
-    text-align: center !important;
-    font-size: 14px;
-    position: absolute;
-    margin: 0 auto;
-    z-index: 1;
-    width: 20px;
-    bottom: 100%;
-    left: 45%;
-    margin-left: -20px; 
-  }
-  
-
-  .tooltip:hover .tooltip-text {
-    visibility: visible;
-  }
-
 /* Navigation */
 .nav-container{
     width: 100%;
@@ -163,7 +133,7 @@ html, body {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 5px;
-    font-size: 3000%;
+    font-size: 30vw;
     margin: 0 auto;
     
 }
@@ -176,22 +146,22 @@ html, body {
     right: 10%;
 }
 
-.btn-container p {
+/* .btn-container p {
     font-family: "Roboto", sans-serif;
     font-size: 22px;
     color: #000;
     font-weight: bold;
     letter-spacing: 3px;
-}
+} */
 
 .btn-container .btn {
     margin: 10px 0;
     width: 100%;
     height: 50px;
-    border: none;
+    border-bottom: solid 2px #ba1ad3;
     border-radius: 3px;
-    background: #ba1ad3;
-    color: #fff;
+    background: transparent;
+    color: #000;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -203,7 +173,7 @@ html, body {
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    color: #fff;
+    color: #ba1ad3;
     text-decoration: none;
     padding: 5px;
     font-weight: bold;
@@ -211,10 +181,8 @@ html, body {
 }
 
 .btn-container .btn i {
-    
-
     font-size: 28px;
-    color: #fff;
+    color: #ba1ad3;
     padding: 5px 20px 5px 5px;
     transition: padding 0.5s;
 }

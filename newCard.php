@@ -17,9 +17,9 @@
     </div>
     <div>
   <ul>
-  <li><a class="tooltip" href="dashboard.php"><i class="fas fa-home"></i><span class="tooltip-text">Home</span></a></li>
-  <li><a class="tooltip" href="settings.php"><i class="fas fa-cog"></i><span class="tooltip-text">Settings</span></a></li>
-  <li><button class="tooltip"><i class="fas fa-sign-out-alt"></i><span class="tooltip-text">Logout</span></button></li>
+  <li><a class="tooltip" href="dashboard.php"><i class="fas fa-home"></i></a></li>
+  <li><a class="tooltip" href="settings.php"><i class="fas fa-cog"></i></a></li>
+  <li><button class="tooltip"><i class="fas fa-sign-out-alt"></i></button></li>
   </ul>
 </div>
   </div>

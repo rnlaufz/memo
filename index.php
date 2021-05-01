@@ -25,9 +25,8 @@ if(mysqli_connect_errno()){
     <h1>MEMO</h1>
     </div>
     <div class="btn-container">
-    <p>Quiz Yourself</p>
     <div class="btn">
-    <a href="register.php">Start Now</a>
+    <a href="register.php">Quiz Yourself</a>
     <i class="fas fa-long-arrow-alt-right"></i>
     </div>
     

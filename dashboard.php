@@ -17,9 +17,9 @@
     </div>
     <div>
   <ul>
-  <li><a class="tooltip" href="newCard.php"><i class="fas fa-plus"></i><span class="tooltip-text">New</span></a></li>
-  <li><a class="tooltip" href="settings.php"><i class="fas fa-cog"></i><span class="tooltip-text">Settings</span></a></li>
-  <li><a href="includes/handlers/logout.php" class="tooltip"><i class="fas fa-sign-out-alt"></i><span class="tooltip-text">Logout</span></a></li>
+  <li><a  href="newCard.php"><i class="fas fa-plus"></i></a></li>
+  <li><a  href="settings.php"><i class="fas fa-cog"></i></a></li>
+  <li><a href="includes/handlers/logout.php" ><i class="fas fa-sign-out-alt"></i></a></li>
   </ul>
 </div>
   </div>
