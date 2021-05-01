@@ -19,7 +19,7 @@
   <ul>
   <li><a href="newCard.php"><i class="fas fa-plus"></i></a></li>
   <li><a href="dashboard.php"><i class="fas fa-home"></i></a></li>
-  <li><button ><i class="fas fa-sign-out-alt"></i></button></li>
+  <li><a href="includes/handlers/logout.php" ><i class="fas fa-sign-out-alt"></i></a></li>
   </ul>
 </div>
   </div>
