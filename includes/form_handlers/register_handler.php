@@ -36,7 +36,7 @@ if(isset($_POST['registerButton'])){
       $email = filter_var($email, FILTER_VALIDATE_EMAIL);
 
       // Check if email already exists
-      $email_check = mysqli_query($connectQuery, "SELECT email FROM users WHERE email = '$email'");
+      $email_check = mysqli_query($connectQuery, "SELECT email FROM memousers WHERE email = '$email'");
 
       // Count number of rows returned
       $num_rows = mysqli_num_rows($email_check);
@@ -76,7 +76,7 @@ if(isset($_POST['registerButton'])){
 
    $userKey = generateKey();
 
-    $query = mysqli_query($connectQuery, "INSERT INTO users VALUES('', '$userKey','$name', '$email', '$passwordOne', '$date', '0')");
+    $query = mysqli_query($connectQuery, "INSERT INTO memousers VALUES('', '$userKey','$name', '$email', '$passwordOne', '0', '$date')");
 
     // Clear sessions
     $_SESSION['regName'] = '';

@@ -22,7 +22,7 @@ if(isset($_POST['signIn'])){
   $saltPassword = $salt.$password;
   $password = md5($saltPassword);
 
-  $checkDBQuery = mysqli_query($connectQuery, "SELECT * FROM users WHERE email='$email' AND password='$password'");
+  $checkDBQuery = mysqli_query($connectQuery, "SELECT * FROM memousers WHERE email='$email' AND password='$password'");
   $checkLoginQuery = mysqli_num_rows($checkDBQuery);
   if($checkLoginQuery == 1){
       $row = mysqli_fetch_array($checkDBQuery);
