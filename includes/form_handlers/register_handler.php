@@ -63,7 +63,7 @@ if(isset($_POST['registerButton'])){
     $saltPassword = $salt.$passwordOne;
     $passwordOne = md5($saltPassword);
 
-    // Generate use identifier
+    // Generate user identifier
     function generateKey($length = 90) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);

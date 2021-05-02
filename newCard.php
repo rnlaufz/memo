@@ -1,3 +1,14 @@
+<!-- PHP Block -->
+<?php
+require 'config/config.php';
+require "includes/header.php";
+require 'includes/form_handlers/add_card_handler.php';
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,15 +34,32 @@
   </ul>
 </div>
   </div>
+   <!-- Show errors if any -->
+   <?php
+    if(in_array("Please add question and answer.", $errorArray)) echo "<span class='error'>Please add question and answer. <br></span>";
+  ?>
+
   <!-- Main content -->
   <div class="form-container">
   <form action="newCard.php" method="POST">
   <div class="inputs">
   <div class="form-control">
-  <input name="question" type="text" placeholder="Question" required>
+  <input name="question" type="text" placeholder="Question" required
+  value="<?php
+    if(isset($_SESSION['question'])){
+      echo $_SESSION['question'];
+    }
+  ?>" 
+  >
   </div>
   <div class="form-control">
-  <input name="answer" type="text" placeholder="Answer" required>
+  <input name="answer" type="text" placeholder="Answer" required
+  value="<?php
+    if(isset($_SESSION['answer'])){
+      echo $_SESSION['answer'];
+    }
+  ?>" 
+  >
   </div>
   <div class="form-control">
   <input name="addCard" type="submit" value="Add">
