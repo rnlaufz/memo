@@ -11,10 +11,12 @@ if(isset($_POST['addCard'])){
   // Registration form values
   // Remove html tags and whitespaces
   $question = strip_tags($_POST['question']);
+  $question = str_replace("'", "\'", $question); 
   $question = trim($question);
   $question = ucfirst(strtolower($question)); // Uppercase the first letter
 
   $answer = strip_tags($_POST['answer']);
+  $answer = str_replace("'", "\'", $answer); 
   $answer = trim($answer);
   $answer = ucfirst(strtolower($answer)); // Uppercase the first letter
 
