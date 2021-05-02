@@ -4,7 +4,7 @@
 $email = '';
 $password = '';
 $errorArray = array(); // array for errors
-$messageArray = array(); // array for messa
+$messageArray = array(); // array for messages
 
 if(isset($_POST['signIn'])){
 // Login form values
@@ -26,9 +26,10 @@ if(isset($_POST['signIn'])){
   $checkLoginQuery = mysqli_num_rows($checkDBQuery);
   if($checkLoginQuery == 1){
       $row = mysqli_fetch_array($checkDBQuery);
-
-    //   Store user id
-      $_SESSION['user_identifier'] = $userKey;
+      $userKey = $row['userkey'];
+      echo $userKey;
+      $_SESSION['userKey'] = $userKey;
+     
       header('Location: dashboard.php');
       exit();
   } else {

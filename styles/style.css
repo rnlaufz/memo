@@ -276,12 +276,12 @@ html, body {
 .form-container form p {
     position: absolute;
     bottom: 10px;
-    color: #fff;
+    color: #c465d3;
     font-size: 18px;
 }
 
 .form-container form p a {
-    color: #fff;
+    color: #c465d3;
     font-size: 18px;
     text-decoration: underline;
     font-weight: bold;

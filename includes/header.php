@@ -1,7 +1,7 @@
 <?php
 
-if(isset($_SESSION['user_identifier'])){
-$userKey = $_SESSION['user_identifier'];
+if(isset($_SESSION['userKey'])){
+$checkUserKey = $_SESSION['userKey'];
 } else {
     header("Location: login.php");
 };

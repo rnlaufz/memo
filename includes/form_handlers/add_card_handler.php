@@ -2,7 +2,6 @@
 // Declare form variables
 $question = '';
 $answer = '';
-$userKey ='';
 $errorArray = array(); // array for errors
 $messageArray = array(); // array for messages
 
@@ -28,19 +27,18 @@ if(isset($_POST['addCard'])){
     }
 
   if(empty($errorArray)){
-    
+    echo $checkUserKey;
 
-    echo $_SESSION['user_identifier'];
+    $query = mysqli_query($connectQuery, "INSERT INTO memocards VALUES('', '$checkUserKey ','$question', '$answer')");
 
-    // $query = mysqli_query($connectQuery, "INSERT INTO memousers VALUES('', '$userKey','$name', '$email', '$passwordOne', '0', '$date')");
+    // Clear sessions
+    $_SESSION['question'] = '';
+    $_SESSION['answer'] = ''; 
 
-    // // Clear sessions
-    // $_SESSION['regName'] = '';
-    // $_SESSION['regEmail'] = ''; 
-
-    // // Show success message
-    // array_push($messageArray, "Registration successfull.");
-    // header("Location: dashboard.php");
+    // Show success message
+    array_push($messageArray, "Card added");
+    header("Location: dashboard.php");
+    exit();
   }
 }
 
