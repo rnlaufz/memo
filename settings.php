@@ -30,8 +30,32 @@ require "includes/header.php";
   </div>
   <!-- Main content -->
    </div>
+    <div class="actions-container">
+    <div class="action-buttons">
+    <button class="toggle delCards">Delete Cards</button>
+    <button class="toggle delAccount">Delete Account</button>
+    </div>
+    <!-- Delete cards -->
+    <div class="hide confirm-delete-cards">
+    <form action="settings.php"  method="POST">
+    <label for="deleteCards">Are you sure you want to delete all your cards?</label>
+    <input name="deleteCards" type="submit" value="Delete Cards">
+    </form>
+    </div>
+    <!-- Delete account -->
+    <div class="hide confirm-delete-account">
+    <form action="settings.php"  method="POST">
+    <label for="deleteAccount">Are you sure you want to delete your account?</label>
+    <input name="deleteAccount" type="submit" value="Delete Account">
+    </form>
+    </div>
+    </div>
 
     <!-- Import font awesome -->
-    <script src="https://kit.fontawesome.com/415bbac1bd.js" crossorigin="anonymous"></script>                                
+    <script src="https://kit.fontawesome.com/415bbac1bd.js" crossorigin="anonymous"></script>     
+     <!-- Import Messages & errors -->
+     <script src="scripts/messages.js"></script>
+     <!-- Import settings ui script -->
+     <script src="scripts/toggle.js"></script>
 </body>
 </html>

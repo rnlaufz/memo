@@ -388,6 +388,85 @@ html, body {
 }
 
 
+/* Settings */
+
+/* Call options */
+.actions-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 0;
+}
+
+.action-buttons {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.action-buttons button {
+    cursor: pointer;
+    display: block;
+    width: 20%;
+    height: 30%;
+    padding: 10px;
+    border: 0;
+    background-color: #c465d3;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    transition: background-color .3s;
+}
+
+.action-buttons button:hover {
+    background-color: #ba1ad3;
+}
+
+/* Toggle options showing */
+.hide{
+    display: none !important;
+}
+
+/* Delete cards/account */
+.confirm-delete-cards, .confirm-delete-account {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-delete-cards form, .confirm-delete-account form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.confirm-delete-cards form > * , .confirm-delete-account form > * {
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+}
+
+.confirm-delete-cards form input, .confirm-delete-account form input{
+    cursor: pointer;
+    width: 40%;
+    background: #d31a90;
+    color: #fff;
+    border: 0;
+}
+
+
 /* Footer */
 .footer-container {
     width: 100%;

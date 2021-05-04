@@ -24,7 +24,7 @@ require 'includes/form_handlers/login_handler.php';
     </div>
     <div>
   <ul>
-  <li><a href="login.php">Sign In</a></li>
+  <li><a href="login.php">Sign In</a></li> 
   <li><a href="register.php">Sign Up</a></li>
   </ul>
 </div>
@@ -68,6 +68,6 @@ require 'includes/form_handlers/login_handler.php';
     </div>
   </div>  
 
-  <script src="scripts/app.js"></script> 
+  <script src="scripts/messages.js"></script> 
 </body>
 </html>

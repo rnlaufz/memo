@@ -86,6 +86,6 @@ require 'includes/form_handlers/register_handler.php';
     </div>
   </div> 
 
-  <script src="scripts/app.js"></script> 
+  <script src="scripts/messages.js"></script> 
 </body>
 </html>
