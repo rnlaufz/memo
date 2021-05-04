@@ -49,6 +49,12 @@ require "includes/header.php";
     <input name="deleteAccount" type="submit" value="Delete Account">
     </form>
     </div>
+
+    <div class="footer-container">
+        <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ</p>
+    </div>
+    </div>
+
     </div>
 
     <!-- Import font awesome -->
