@@ -27,7 +27,6 @@ if(isset($_POST['signIn'])){
   if($checkLoginQuery == 1){
       $row = mysqli_fetch_array($checkDBQuery);
       $userKey = $row['userkey'];
-      echo $userKey;
       $_SESSION['userKey'] = $userKey;
      
       header('Location: dashboard.php');

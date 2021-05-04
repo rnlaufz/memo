@@ -1,6 +1,7 @@
 <?php
 require 'config/config.php';
 require "includes/header.php";
+require 'includes/handlers/deleteData.php';
 ?>
 
 <!DOCTYPE html>
@@ -38,15 +39,15 @@ require "includes/header.php";
     <!-- Delete cards -->
     <div class="hide confirm-delete-cards">
     <form action="settings.php"  method="POST">
-    <label for="deleteCards">Are you sure you want to delete all your cards?</label>
-    <input name="deleteCards" type="submit" value="Delete Cards">
+    <label for="delCards">Are you sure you want to delete all your cards?</label>
+    <input name="delCards" type="submit" value="Delete Cards">
     </form>
     </div>
     <!-- Delete account -->
     <div class="hide confirm-delete-account">
     <form action="settings.php"  method="POST">
-    <label for="deleteAccount">Are you sure you want to delete your account?</label>
-    <input name="deleteAccount" type="submit" value="Delete Account">
+    <label for="delAcc">Are you sure you want to delete your account?</label>
+    <input name="delAcc" type="submit" value="Delete Account">
     </form>
     </div>
 
