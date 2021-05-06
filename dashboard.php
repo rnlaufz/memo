@@ -1,6 +1,7 @@
 <?php
 require 'config/config.php';
 require "includes/header.php";
+require 'includes/handlers/getCards.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +19,7 @@ require "includes/header.php";
     <!-- Navigation -->
     <div class="nav-container">
     <div>
-    <p class="logo">Hi <span class="name">Name</span>! Up for a quiz?</p>
+    <p class="logo">Hi <span class="name"><?php echo $userName;?></span>! Up for a quiz?</p>
     </div>
     <div>
   <ul>
@@ -35,15 +36,20 @@ require "includes/header.php";
         <div class="flip"><button><i class="fas fa-redo-alt"></i></button></div>
         <!-- Card content -->
         <!-- Tempo hardcode -->
-        <p>Question?</p>
+        <p><?php echo $answer; ?></p>
     </div>
 
 
 <div class="card-navigation"> 
-<div class="num-cards">1 of 10</div>
+<div class="num-cards">
+<!-- Show amount of records -->
+<?php
+echo $currentNumRec." of ".$numRecords;
+?>
+</div>
 <div class="num-arrows">
-<div id="prev"><i class="fas fa-arrow-left"></i></div>
-<div id="next"><i class="fas fa-arrow-right"></i></div>
+<div id="prev"><button ><i class="fas fa-arrow-left"></i></button></div>
+<div id="next"><button><i class="fas fa-arrow-right"></i></button></div>
 </div>
 </div> 
 </div>
