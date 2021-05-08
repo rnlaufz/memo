@@ -33,10 +33,11 @@ require 'includes/handlers/getCards.php';
 <div class="card-container">
     <div class="card">
         <!-- Flip button -->
-        <div class="flip"><button><i class="fas fa-redo-alt"></i></button></div>
+        <div class="flip"><button id="flip" name="flip"><i class="fas fa-redo-alt"></i></button></div>
+
         <!-- Card content -->
         <!-- Tempo hardcode -->
-        <p><?php echo $answer; ?></p>
+        <p id="cardText"><?php echo $question; ?></p>
     </div>
 
 
@@ -61,5 +62,35 @@ echo $currentNumRec." of ".$numRecords;
 
  <!-- Import Font Awesome -->
  <script src="https://kit.fontawesome.com/415bbac1bd.js" crossorigin="anonymous"></script>
+
+ <!-- Change card text on button click -->
+ <script>  
+//  Get flipper button and element for results
+ const toggleFlip = document.getElementById('flip');
+ const cardText = document.getElementById('cardText');
+//  Import php variables
+ let answer = "<?php echo $answer; ?>"
+ let question = "<?php echo $question; ?>"
+//  Add event listener
+toggleFlip.addEventListener('click', () => {
+ switch(cardText.innerHTML){
+   case question:
+     cardText.innerHTML = answer
+     break;
+    case answer:
+    cardText.innerHTML = question
+     break; 
+ }
+
+// if(cardText.innerHTML === question){
+//   cardText.innerHTML = answer
+// } else {
+//   cardText.innerHTML = question;
+// } 
+
+  
+})
+console.log(answer);
+ </script>
 </body>
 </html>
