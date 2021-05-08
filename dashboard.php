@@ -37,20 +37,19 @@ require 'includes/handlers/getCards.php';
 
         <!-- Card content -->
         <!-- Tempo hardcode -->
-        <p id="cardText"><?php echo $question; ?></p>
+        <p id="cardText"></p>
     </div>
 
 
 <div class="card-navigation"> 
-<div class="num-cards">
-<!-- Show amount of records -->
-<?php
-echo $currentNumRec." of ".$numRecords;
-?>
-</div>
+<div class="num-cards" id="current-of-all"></div>
 <div class="num-arrows">
-<div id="prev"><button ><i class="fas fa-arrow-left"></i></button></div>
-<div id="next"><button><i class="fas fa-arrow-right"></i></button></div>
+<div id="prev">
+<button type='submit' id='prevBtn'><i class="fas fa-arrow-left"></i></button>
+</div>
+<div id="next">
+<button type='submit' id='nextBtn'><i class="fas fa-arrow-right"></i></button>
+</div>
 </div>
 </div> 
 </div>
@@ -65,12 +64,64 @@ echo $currentNumRec." of ".$numRecords;
 
  <!-- Change card text on button click -->
  <script>  
+//  Card text
+  const cardText = document.getElementById('cardText');
+// Get data from server 
+let getJSON = [<?php echo $json; ?>];
+const dataLength = getJSON[0].length;
+// Set incrementer
+let numCard = 0;
+let {question, answer} = getJSON[0][0];
+
+// Get buttons
+const prev = document.getElementById('prevBtn');
+const next = document.getElementById('nextBtn');
+
+// Get number of current card and all cards
+const currentOfAll = document.getElementById('current-of-all');
+// As initial array elem is zero which is not suitable for representation
+let currentCard = 1;
+
+// Set initial text
+cardText.innerHTML = question;
+currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
+
+// Apply eventListeners
+prev.addEventListener('click', () => {
+  numCard = numCard - 1;
+  currentCard = currentCard - 1;
+  if(numCard >= 0){
+   question = getJSON[0][numCard].question;
+   answer = getJSON[0][numCard].answer;
+   cardText.innerHTML = question;
+   currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
+  } else {
+   numCard = dataLength;
+   currentCard = dataLength;
+   currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
+  }
+   
+
+})
+next.addEventListener('click', () => {
+ numCard = numCard + 1;
+ currentCard = currentCard + 1;
+ if(numCard <= dataLength){
+  question = getJSON[0][numCard].question;
+ answer = getJSON[0][numCard].answer;
+ cardText.innerHTML = question;
+ currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
+ } else {
+  numCard = 0; 
+  currentCard = 0;
+  currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
+ }
+
+})
+
 //  Get flipper button and element for results
  const toggleFlip = document.getElementById('flip');
- const cardText = document.getElementById('cardText');
-//  Import php variables
- let answer = "<?php echo $answer; ?>"
- let question = "<?php echo $question; ?>"
+
 //  Add event listener
 toggleFlip.addEventListener('click', () => {
  switch(cardText.innerHTML){
@@ -80,17 +131,8 @@ toggleFlip.addEventListener('click', () => {
     case answer:
     cardText.innerHTML = question
      break; 
- }
-
-// if(cardText.innerHTML === question){
-//   cardText.innerHTML = answer
-// } else {
-//   cardText.innerHTML = question;
-// } 
-
-  
+ }  
 })
-console.log(answer);
  </script>
 </body>
 </html>
