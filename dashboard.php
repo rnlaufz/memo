@@ -62,7 +62,7 @@ require 'includes/handlers/getCards.php';
  <!-- Import Font Awesome -->
  <script src="https://kit.fontawesome.com/415bbac1bd.js" crossorigin="anonymous"></script>
 
- <!-- Change card text on button click -->
+ <!-- Change card text on button click, show next and prev cards -->
  <script>  
 //  Card text
   const cardText = document.getElementById('cardText');
@@ -95,28 +95,35 @@ prev.addEventListener('click', () => {
    answer = getJSON[0][numCard].answer;
    cardText.innerHTML = question;
    currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
-  } else {
-   numCard = dataLength;
+  } 
+  if(numCard < 0) {
+   numCard = dataLength - 1;
    currentCard = dataLength;
+   question = getJSON[0][numCard].question;
+   answer = getJSON[0][numCard].answer;
+   cardText.innerHTML = question;
    currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
   }
-   
-
 })
 next.addEventListener('click', () => {
  numCard = numCard + 1;
  currentCard = currentCard + 1;
- if(numCard <= dataLength){
-  question = getJSON[0][numCard].question;
+ if(numCard < dataLength){
+ question = getJSON[0][numCard].question;
  answer = getJSON[0][numCard].answer;
+
  cardText.innerHTML = question;
  currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
- } else {
+ 
+ } 
+ if(numCard >= dataLength) {
   numCard = 0; 
-  currentCard = 0;
+  currentCard = 1;
+  question = getJSON[0][numCard].question;
+  answer = getJSON[0][numCard].answer;
+  cardText.innerHTML = question;
   currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
  }
-
 })
 
 //  Get flipper button and element for results
