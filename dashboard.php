@@ -34,9 +34,6 @@ require 'includes/handlers/getCards.php';
     <div class="card">
         <!-- Flip button -->
         <div class="flip"><button id="flip" name="flip"><i class="fas fa-redo-alt"></i></button></div>
-
-        <!-- Card content -->
-        <!-- Tempo hardcode -->
         <p id="cardText"></p>
     </div>
 
@@ -76,6 +73,9 @@ let {question, answer} = getJSON[0][0];
 // Get buttons
 const prev = document.getElementById('prevBtn');
 const next = document.getElementById('nextBtn');
+
+// Get card
+const card = document.querySelector('.card');
 
 // Get number of current card and all cards
 const currentOfAll = document.getElementById('current-of-all');
@@ -133,10 +133,28 @@ next.addEventListener('click', () => {
 toggleFlip.addEventListener('click', () => {
  switch(cardText.innerHTML){
    case question:
+  //  Set text
      cardText.innerHTML = answer
+    //  Add animation
+     card.style.animation = 'flip 1s';
+     cardText.style.animation = 'fadeIn 1.1s';
+      // Clear animation
+     setTimeout(() => {
+      card.style.animation = '';
+      cardText.style.animation = '';
+     }, 1010);
      break;
     case answer:
+    // Set text
     cardText.innerHTML = question
+    // Add animation
+    card.style.animation = ' flip 1s';
+    cardText.style.animation = 'fadeIn 1.1s';
+    // Clear animation
+    setTimeout(() => {
+      card.style.animation = '';
+      cardText.style.animation = '';
+     }, 1010);
      break; 
  }  
 })
