@@ -95,6 +95,14 @@ prev.addEventListener('click', () => {
    answer = getJSON[0][numCard].answer;
    cardText.innerHTML = question;
    currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
+    //  Add animation
+     card.style.animation = 'fadeIn .3s';
+     cardText.style.animation = 'fadeIn .5s';
+      // Clear animation
+     setTimeout(() => {
+      card.style.animation = '';
+      cardText.style.animation = '';
+     }, 1010);
   } 
   if(numCard < 0) {
    numCard = dataLength - 1;
@@ -103,6 +111,14 @@ prev.addEventListener('click', () => {
    answer = getJSON[0][numCard].answer;
    cardText.innerHTML = question;
    currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
+       //  Add animation
+       card.style.animation = 'fadeIn .3s';
+     cardText.style.animation = 'fadeIn .5s';
+      // Clear animation
+     setTimeout(() => {
+      card.style.animation = '';
+      cardText.style.animation = '';
+     }, 1010);
   }
 })
 next.addEventListener('click', () => {
@@ -114,7 +130,14 @@ next.addEventListener('click', () => {
 
  cardText.innerHTML = question;
  currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
- 
+     //  Add animation
+     card.style.animation = 'fadeIn .3s';
+     cardText.style.animation = 'fadeIn .5s';
+      // Clear animation
+     setTimeout(() => {
+      card.style.animation = '';
+      cardText.style.animation = '';
+     }, 1010);
  } 
  if(numCard >= dataLength) {
   numCard = 0; 
@@ -123,6 +146,14 @@ next.addEventListener('click', () => {
   answer = getJSON[0][numCard].answer;
   cardText.innerHTML = question;
   currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
+       //  Add animation
+       card.style.animation = 'fadeIn .3s';
+     cardText.style.animation = 'fadeIn .5s';
+      // Clear animation
+     setTimeout(() => {
+      card.style.animation = '';
+      cardText.style.animation = '';
+     }, 1010);
  }
 })
 
@@ -137,7 +168,7 @@ toggleFlip.addEventListener('click', () => {
      cardText.innerHTML = answer
     //  Add animation
      card.style.animation = 'flip 1s';
-     cardText.style.animation = 'fadeIn 1.1s';
+     cardText.style.animation = 'fadeIn 1.2s';
       // Clear animation
      setTimeout(() => {
       card.style.animation = '';
@@ -149,7 +180,7 @@ toggleFlip.addEventListener('click', () => {
     cardText.innerHTML = question
     // Add animation
     card.style.animation = ' flip 1s';
-    cardText.style.animation = 'fadeIn 1.1s';
+    cardText.style.animation = 'fadeIn 1.2s';
     // Clear animation
     setTimeout(() => {
       card.style.animation = '';

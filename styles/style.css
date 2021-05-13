@@ -333,15 +333,18 @@ html, body {
 
 /* Flip animation */
   @keyframes flip {
-      50% {
+     50%{
+        transform: rotateY(180deg);
+     }
+      /* 100% {
           transform: rotateY(180deg);
-      }
-      100% {
-          transform: rotateY(360deg);
-      }
+      } */
   }
 /* Fade in animation */
   @keyframes fadeIn {
+      0% {
+          opacity: 0;
+      }
       50% {
           opacity: 0;
       }
@@ -349,6 +352,7 @@ html, body {
         opacity: 1;
       }
   }
+
   
 .flip {
     position: absolute;
