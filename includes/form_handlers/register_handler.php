@@ -78,10 +78,17 @@ if(isset($_POST['registerButton'])){
 
     $query = mysqli_query($connectQuery, "INSERT INTO memousers VALUES('', '$userKey','$name', '$email', '$passwordOne', '0', '$date')");
 
-    // Clear sessions
-    $_SESSION['regName'] = '';
-    $_SESSION['regEmail'] = ''; 
-
+    $checkDBQuery = mysqli_query($connectQuery, "SELECT * FROM memousers WHERE userkey='$userKey'");
+    $checkLoginQuery = mysqli_num_rows($checkDBQuery);
+    if($checkLoginQuery == 1){
+        $row = mysqli_fetch_array($checkDBQuery);
+        $userKey = $row['userkey'];
+        $_SESSION['userKey'] = $userKey;
+       
+        header('Location: dashboard.php');
+        exit();
+    }
+    
     // Show success message
     array_push($messageArray, "Registration successfull.");
     header("Location: dashboard.php");

@@ -58,8 +58,9 @@ require 'includes/handlers/getCards.php';
 
  <!-- Import Font Awesome -->
  <script src="https://kit.fontawesome.com/415bbac1bd.js" crossorigin="anonymous"></script>
+ 
 
- <!-- Change card text on button click, show next and prev cards -->
+ <!-- Change card text on button click, show next and prev cards, apply animations -->
  <script>  
 //  Card text
   const cardText = document.getElementById('cardText');
