@@ -69,8 +69,8 @@ let getJSON = [<?php echo $json; ?>];
 const dataLength = getJSON[0].length;
 // Set incrementer
 let numCard = 0;
-let {question, answer} = getJSON[0][0];
-
+let question = undefined; 
+let answer = undefined;
 // Get buttons
 const prev = document.getElementById('prevBtn');
 const next = document.getElementById('nextBtn');
@@ -84,8 +84,26 @@ const currentOfAll = document.getElementById('current-of-all');
 let currentCard = 1;
 
 // Set initial text
-cardText.innerHTML = question;
 currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
+let initQuestion = "How to add new card?";
+let initAnswer = "Press plus sign on the upper bar and fill in the form.";
+
+let ckeckState = getJSON[0].length;
+console.log(ckeckState)
+if(ckeckState === 0){
+  question = initQuestion;
+  answer = initAnswer;
+  cardText.innerHTML = question;
+  currentOfAll.innerHTML = `0 of 0`;
+  
+} 
+
+if(ckeckState > 0) {
+  question = getJSON[0][numCard].question;
+   answer = getJSON[0][numCard].answer;
+   cardText.innerHTML = question;
+   currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
+}
 
 // Apply eventListeners
 prev.addEventListener('click', () => {
@@ -163,6 +181,7 @@ next.addEventListener('click', () => {
 
 //  Add event listener
 toggleFlip.addEventListener('click', () => {
+  console.log('fires')
  switch(cardText.innerHTML){
    case question:
   //  Set text
@@ -188,6 +207,7 @@ toggleFlip.addEventListener('click', () => {
       cardText.style.animation = '';
      }, 1010);
      break; 
+
  }  
 })
  </script>
