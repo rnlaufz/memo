@@ -331,6 +331,7 @@ html, body {
   
 }
 
+
 /* Flip animation */
   @keyframes flip {
      50%{
@@ -373,8 +374,9 @@ html, body {
 
 /* Tempo styling code */
 .card p {
+    width: 80%;
     text-align: center;
-    font-size: 24px;
+    font-size: 22px;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
 
