@@ -198,7 +198,7 @@ html, body {
 
 .form-container {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: flex;
     align-self: center;
     align-items: center;
@@ -209,7 +209,7 @@ html, body {
 .form-container form {
     position: relative;
     width: 450px;
-    height: 600px;
+    height: 70%;
     background: transparent;
     border: solid 1px #ba1ad3;
     display: flex;
@@ -225,20 +225,24 @@ html, body {
 
 .form-container form h3 {
     position: absolute;
-    top: 50px;
+    top: 5%;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     color: #ba1ad3;
 }
 
 .form-container form .inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
-    height: auto;
+    height: 80%;
 }
 
 .form-control {
     width: 100%;
-    height: 70px;
+    height: 15%;
     padding: 10px 40px;
 }
 
@@ -260,13 +264,14 @@ html, body {
    font-weight: 700;
    letter-spacing: 2px;
    background-color: #c465d3c7;
-   border: 0;
+   border: none;
    transition: transform .3s, background-color .4s;
 }
 
 .form-control input[type=submit]:hover{
     transform: scale(1.1);
     background-color: #ba1ad3;
+    border: none;
 }
 
 .form-control input:focus {
@@ -275,7 +280,7 @@ html, body {
 
 .form-container form p {
     position: absolute;
-    bottom: 10px;
+    bottom: 2%;
     color: #c465d3;
     font-size: 18px;
 }
@@ -518,6 +523,38 @@ html, body {
 
 .footer-container p {
     font-family: 'Roboto', sans-serif;
+}
+
+/* Adaptive styling*/
+
+@media(max-width:700px){
+    .action-buttons button {
+        height: 60px;
+        font-size: 16px;
+    }
+}
+@media(max-height:680px){
+    .form-control input[type=submit] {
+       height: 150%;
+     }
+}
+@media(max-height:500px){
+    .nav-container{
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .form-container form h3{
+        font-size: 18px;
+    }
+    .form-container form p, .form-container form p a {
+        font-size: 14px;
+    }
+
+    .form-control input[type=submit] {
+        font-size: 16px;
+        height: 30px;
+      }
 }
 
 
