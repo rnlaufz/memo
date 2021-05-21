@@ -42,7 +42,7 @@ require 'includes/form_handlers/add_card_handler.php';
   <!-- Main content -->
   <div class="form-container">
   <form action="newCard.php" method="POST">
-  <div class="inputs">
+  <div class="inputs new-card-fix">
   <div class="form-control">
   <input name="question" type="text" placeholder="Question" required
   value="<?php

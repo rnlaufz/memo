@@ -558,37 +558,55 @@ html, body {
 }
 
 /* Mobile styling */
+/* Forms */
 
-@media(max-width:376px){
-    .form-container form {
-        border: none;
-        box-shadow: none;
-    }
-}
-@media(max-width:321px){
-
-    .logo{ 
-        font-size: 18px;
-    }
-
-    .nav-container div ul li {
-        font-size: 18px;
-    }
-    .form-container form {
-        border: none;
-        box-shadow: none;
-    }
-
-    .form-container form h3 {
-        font-size: 20px;
-    }
-}
-
-@media(min-height:1365px){
+@media (min-height:1365px){
     .form-container form {
         height: 50%;
+        width: 100%;
     }
+
+    
+    .form-container form .inputs.new-card-fix{
+        height: 100%;
+        width: 100%;
+    }
+
+    .form-container form .inputs.new-card-fix input{
+        height: 20% !important;
+        width: 60%;
+        font-size: 20px;
+    }
+    .form-container form .inputs.new-card-fix input[type=submit]{
+        height: 90% !important;
+        font-size: 22px;
+    }
+
 }
+@media (min-width:1365px){
+    .form-container form {
+        height: 50%;
+        width: 100%;
+    }
+
+    
+    .form-container form .inputs.new-card-fix{
+        height: 100%;
+        width: 100%;
+    }
+
+    .form-container form .inputs.new-card-fix input{
+        height: 20% !important;
+        width: 60%;
+        font-size: 20px;
+    }
+    .form-container form .inputs.new-card-fix input[type=submit]{
+        height: 90% !important;
+        font-size: 22px;
+    }
+
+}
+
 @media(max-height:654px){
     .nav-container {
         height: 35px;
@@ -609,9 +627,20 @@ html, body {
         
     }
 
-    .form-container form .inputs.login-fix{
+    .form-container form .inputs.login-fix,  .form-container form .inputs.new-card-fix{
         align-items: center;
         justify-content: center;
+    }
+
+    .form-container form .inputs.new-card-fix{
+        height: 100%;
+    }
+
+    .form-container form .inputs.new-card-fix input{
+        height: 20px !important;
+    }
+    .form-container form .inputs.new-card-fix input[type=submit]{
+        height: 40px !important;
     }
 
      .form-control input{
@@ -640,3 +669,36 @@ html, body {
     .form-container form p a {display: block;}
   
 }
+
+@media(max-width:376px){
+    .form-container form {
+        border: none;
+        box-shadow: none;
+    }
+}
+@media(max-width:321px){
+
+    .logo{ 
+        font-size: 18px;
+    }
+
+    .nav-container div ul li {
+        font-size: 18px;
+    }
+    .form-container form {
+        border: none;
+        box-shadow: none;
+    }
+
+    .form-container form h3 {
+        font-size: 20px;
+    }
+}
+
+
+
+/* Dashboard */
+
+
+/* Settings */
+
