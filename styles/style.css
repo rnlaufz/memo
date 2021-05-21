@@ -557,5 +557,86 @@ html, body {
       }
 }
 
+/* Mobile styling */
 
+@media(max-width:376px){
+    .form-container form {
+        border: none;
+        box-shadow: none;
+    }
+}
+@media(max-width:321px){
 
+    .logo{ 
+        font-size: 18px;
+    }
+
+    .nav-container div ul li {
+        font-size: 18px;
+    }
+    .form-container form {
+        border: none;
+        box-shadow: none;
+    }
+
+    .form-container form h3 {
+        font-size: 20px;
+    }
+}
+
+@media(min-height:1365px){
+    .form-container form {
+        height: 50%;
+    }
+}
+@media(max-height:654px){
+    .nav-container {
+        height: 35px;
+    }
+
+    .logo{
+        font-size: 18px;
+    }
+
+    .nav-container div ul li {
+        font-size: 16px;
+    }
+
+    .form-container form .inputs {
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: 80%;
+        
+    }
+
+    .form-container form .inputs.login-fix{
+        align-items: center;
+        justify-content: center;
+    }
+
+     .form-control input{
+         height: 13%;
+         font-size: 14px;
+         padding: 7px;
+     }
+
+    .form-container form .inputs input[type=submit]{
+        height: 25px;
+        font-size: 14px;
+    }
+
+    .form-container form p {
+        bottom: 1px;
+    }
+
+    .form-container form p {
+        font-size: 14px;
+    }
+
+    .form-container form p br {
+        display: none;
+    }
+
+    .form-container form p a {display: block;}
+  
+}

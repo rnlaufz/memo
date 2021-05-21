@@ -36,7 +36,7 @@ require 'includes/form_handlers/login_handler.php';
   <div class="form-container">
   <form action="login.php" method="POST">
   <h3>MEMO | Sign In</h3>
-  <div class="inputs">
+  <div class="inputs login-fix">
  
  
   <div class="form-control">
