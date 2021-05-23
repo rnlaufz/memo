@@ -19,7 +19,7 @@ require 'includes/handlers/getCards.php';
     <!-- Navigation -->
     <div class="nav-container">
     <div>
-    <p class="logo">Hi <span class="name"><?php echo $userName;?></span>! Up for a quiz?</p>
+    <p class="logo">Hi <span class="name"><?php echo $userName;?></span>!</p>
     </div>
     <div>
   <ul>

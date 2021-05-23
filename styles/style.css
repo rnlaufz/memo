@@ -325,8 +325,8 @@ html, body {
 
 .card {
     position: relative;
-    width: 400px;
-    height: 250px;
+    width: 45%;
+    height: 35%;
     box-shadow: 0 0 10px #c465d3;
     align-self: center;
     border-radius: 5px;
@@ -534,11 +534,23 @@ html, body {
         font-size: 16px;
     }
 }
+@media(max-width:769px){
+   .dashboard-container .card-container .card {
+       height: 30% !important;
+   }
+}
 @media(max-height:680px){
     .form-control input[type=submit] {
        height: 150%;
      }
 }
+
+@media(max-width:640px){
+    .dashboard-container .card-container .card {
+        height: 55%;
+    }
+}
+
 @media(max-height:500px){
     .nav-container{
         height: 50px;
@@ -601,6 +613,17 @@ html, body {
         font-size: 22px;
     }
 
+    .dashboard-container .card-container .card {
+        width: 30%;
+        height: 40%;
+    }
+
+}
+
+@media(max-width:823px){
+    .dashboard-container .card-container .card {
+        height: 55%;
+    }
 }
 
 @media(max-height:654px){
@@ -649,7 +672,21 @@ html, body {
     .form-container form p br {display: none;}
 
     .form-container form p a {display: block;}
+
+    .dashboard-container .card-container .card {
+        height: 55% !important;
+    }
+    .dashboard-container .card-container .card p {
+       font-size: 18px;
+    }
   
+}
+
+@media(max-width:415px){
+    .dashboard-container .card-container .card {
+        width: 80%;
+        height: 35%;
+    } 
 }
 
 @media(max-width:376px){
@@ -657,7 +694,45 @@ html, body {
         border: none;
         box-shadow: none;
     }
+
+    .dashboard-container{
+        overflow: hidden;
+    }
+
+    .dashboard-container .nav-container {
+        width: 100%;
+    }
+    
+    .dashboard-container .nav-container .logo {
+        font-size: 12px;
+    }
+
+    .dashboard-container .card-container .card {
+        width: 70%;
+        height: 40%;
+    }
+
+    .dashboard-container .card-container .card p {
+        font-size: 18px;
+    } 
+
+    .dashboard-container .card-container .card .flip button i, .dashboard-container .card-navigation .num-arrows div button i,  .dashboard-container .card-navigation .num-cards{
+        font-size: 16px;
+    }
+
+    .dashboard-container .footer-container {
+        display: flex;
+        left: 7%;
+        width: 100%;
+        align-items: center;
+    }
+
+    .dashboard-container .footer-container p {
+        font-size: 12px;
+    }
 }
+
+
 @media(max-width:321px){
 
     .logo{font-size: 18px;}
@@ -677,6 +752,10 @@ html, body {
     .action-buttons button{
         font-size: 16px;
         width: 80px;
+    }
+
+  .dashboard-container .footer-container p {
+        font-size: 10px;
     }
 
 }
