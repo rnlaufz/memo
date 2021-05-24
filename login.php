@@ -3,7 +3,6 @@
 require 'config/config.php';
 require 'includes/form_handlers/login_handler.php';
 ?>
-
 <!-- HTML Block -->
 <!DOCTYPE html>
 <html lang="en">
@@ -51,9 +50,6 @@ require 'includes/form_handlers/login_handler.php';
   <div class="form-control">
   <input name="logPassword" type="password" placeholder="Password" required>
   </div>
-  
- 
-  
   <div class="form-control">
   <input name="signIn" type="submit" value="Submit">
   </div>
@@ -64,10 +60,9 @@ require 'includes/form_handlers/login_handler.php';
   </form>
   </div>
   <div class="footer-container">
-        <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ</p>
+  <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ |  Icons made by <a href="https://www.flaticon.com/authors/vaadin" title="Vaadin">Vaadin</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
     </div>
   </div>  
-
   <script src="scripts/messages.js"></script> 
 </body>
 </html>

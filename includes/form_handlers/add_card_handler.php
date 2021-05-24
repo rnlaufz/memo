@@ -5,8 +5,6 @@ $answer = '';
 $errorArray = array(); // array for errors
 $messageArray = array(); // array for messages
 
-
-
 if(isset($_POST['addCard'])){
   // Registration form values
   // Remove html tags and whitespaces
@@ -43,5 +41,4 @@ if(isset($_POST['addCard'])){
     exit();
   }
 }
-
 ?>

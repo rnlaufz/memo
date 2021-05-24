@@ -3,7 +3,6 @@ require 'config/config.php';
 require "includes/header.php";
 require 'includes/handlers/deleteData.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,12 +51,10 @@ require 'includes/handlers/deleteData.php';
     </div>
 
     <div class="footer-container">
-        <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ</p>
+    <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ |  Icons made by <a href="https://www.flaticon.com/authors/vaadin" title="Vaadin">Vaadin</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
     </div>
     </div>
-
     </div>
-
     <!-- Import font awesome -->
     <script src="https://kit.fontawesome.com/415bbac1bd.js" crossorigin="anonymous"></script>     
      <!-- Import Messages & errors -->

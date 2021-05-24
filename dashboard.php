@@ -3,7 +3,6 @@ require 'config/config.php';
 require "includes/header.php";
 require 'includes/handlers/getCards.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,8 +35,6 @@ require 'includes/handlers/getCards.php';
         <div class="flip"><button id="flip" name="flip"><i class="fas fa-redo-alt"></i></button></div>
         <p id="cardText"></p>
     </div>
-
-
 <div class="card-navigation"> 
 <div class="num-cards" id="current-of-all"></div>
 <div class="num-arrows">
@@ -52,17 +49,13 @@ require 'includes/handlers/getCards.php';
 </div>
 <!-- Footer -->
   <div class="footer-container">
-        <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ</p>
+        <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ |  Icons made by <a href="https://www.flaticon.com/authors/vaadin" title="Vaadin">Vaadin</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
     </div>
 </div>
-
  <!-- Import Font Awesome -->
  <script src="https://kit.fontawesome.com/415bbac1bd.js" crossorigin="anonymous"></script>
- 
-
- <!-- Change card text on button click, show next and prev cards, apply animations -->
  <script>  
-//  Card text
+// Card text
   const cardText = document.getElementById('cardText');
 // Get data from server 
 let getJSON = [<?php echo $json; ?>];
@@ -95,16 +88,13 @@ if(ckeckState === 0){
   answer = initAnswer;
   cardText.innerHTML = question;
   currentOfAll.innerHTML = `0 of 0`;
-  
 } 
-
 if(ckeckState > 0) {
   question = getJSON[0][numCard].question;
    answer = getJSON[0][numCard].answer;
    cardText.innerHTML = question;
    currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
 }
-
 // Apply eventListeners
 prev.addEventListener('click', () => {
   numCard = numCard - 1;
@@ -146,7 +136,6 @@ next.addEventListener('click', () => {
  if(numCard < dataLength){
  question = getJSON[0][numCard].question;
  answer = getJSON[0][numCard].answer;
-
  cardText.innerHTML = question;
  currentOfAll.innerHTML = `${currentCard} of ${dataLength}`;
      //  Add animation
@@ -175,13 +164,10 @@ next.addEventListener('click', () => {
      }, 1010);
  }
 })
-
 //  Get flipper button and element for results
  const toggleFlip = document.getElementById('flip');
-
-//  Add event listener
+//  Add event listener - toggle answer and question
 toggleFlip.addEventListener('click', () => {
-  console.log('fires')
  switch(cardText.innerHTML){
    case question:
   //  Set text
@@ -207,7 +193,6 @@ toggleFlip.addEventListener('click', () => {
       cardText.style.animation = '';
      }, 1010);
      break; 
-
  }  
 })
  </script>

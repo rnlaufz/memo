@@ -3,7 +3,6 @@
     if(isset($_POST['delCards'])){
         $query = mysqli_query($connectQuery, "DELETE FROM memocards WHERE userkey='$checkUserKey'");
         header("Location: newCard.php");
-
     }
     // Delete account
     if(isset($_POST['delAcc'])){

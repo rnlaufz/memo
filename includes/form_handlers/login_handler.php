@@ -1,5 +1,4 @@
 <?php
-
 // Declare form variables
 $email = '';
 $password = '';
@@ -12,7 +11,6 @@ if(isset($_POST['signIn'])){
   $email = strip_tags($_POST['logEmail']);
   $email = str_replace(' ', '', $email);
   $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-
 
 // Session variables
   $_SESSION['logEmail'] = $email;  
@@ -28,13 +26,10 @@ if(isset($_POST['signIn'])){
       $row = mysqli_fetch_array($checkDBQuery);
       $userKey = $row['userkey'];
       $_SESSION['userKey'] = $userKey;
-     
       header('Location: dashboard.php');
       exit();
   } else {
     array_push($errorArray, "Wrong password or email");
   }
-
- 
 }
 ?>

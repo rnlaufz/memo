@@ -1,14 +1,3 @@
-<!-- PHP Block -->
-
-<?php
-$connectQuery = mysqli_connect("localhost", "root", "", "memo");
-
-if(mysqli_connect_errno()){
-    echo "Failed to connect: " - mysqli_connect_errno();
-};
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,13 +18,11 @@ if(mysqli_connect_errno()){
     <a href="register.php">Quiz Yourself</a>
     <i class="fas fa-long-arrow-alt-right"></i>
     </div>
-    
     </div>
     <div class="footer-container">
-        <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ</p>
+    <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ |  Icons made by <a href="https://www.flaticon.com/authors/vaadin" title="Vaadin">Vaadin</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
     </div>
     </div>
-
     <!-- Import Font Awesome -->
     <script src="https://kit.fontawesome.com/415bbac1bd.js" crossorigin="anonymous"></script>
 </body>

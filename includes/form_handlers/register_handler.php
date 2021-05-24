@@ -1,5 +1,4 @@
 <?php
-
 // Declare form variables
 $name = '';
 $email = '';
@@ -9,8 +8,6 @@ $userKey = '';
 $date = ''; // date of register
 $errorArray = array(); // array for errors
 $messageArray = array(); // array for messages
-
-
 
 if(isset($_POST['registerButton'])){
   // Registration form values
@@ -49,20 +46,18 @@ if(isset($_POST['registerButton'])){
   if($passwordOne == $passwordTwo){
    
     if(preg_match('/^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/', $passwordOne)){
-    
+      // Do nothing
     } else {
       array_push($errorArray,'Password must have at least one uppercase letter, one lowercase letter, number and a special character'); 
     }
   } else {
     array_push($errorArray,"Passwords do not match");
   }
-
   if(empty($errorArray)){
     // Password encryption
     $salt = 'ksjbuiu5nik3445fm!fcHFRDCW^I*VFRNSW$';
     $saltPassword = $salt.$passwordOne;
     $passwordOne = md5($saltPassword);
-
     // Generate user identifier
     function generateKey($length = 90) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -73,7 +68,6 @@ if(isset($_POST['registerButton'])){
         }
         return $randomKey;
     }
-
    $userKey = generateKey();
 
     $query = mysqli_query($connectQuery, "INSERT INTO memousers VALUES('', '$userKey','$name', '$email', '$passwordOne', '0', '$date')");

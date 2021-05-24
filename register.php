@@ -3,7 +3,6 @@
 require 'config/config.php';
 require 'includes/form_handlers/register_handler.php';
 ?>
-
 <!-- HTML Block -->
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +35,6 @@ require 'includes/form_handlers/register_handler.php';
     if(in_array("Passwords do not match", $errorArray)) echo "<span class='error'>Passwords do not match <br></span>";
     if(in_array("Registration successfull. You may sign in now.", $messageArray)) echo "<span class='message'>Registration successfull. You may sign in now.<br></span>";
   ?>
-
   <!-- Form -->
   <div class="form-container">
   <form action="register.php" method="POST">
@@ -51,7 +49,6 @@ require 'includes/form_handlers/register_handler.php';
   ?>" 
   required>
   </div>
- 
   <div class="form-control">
   <input name="regEmail" type="email" placeholder="Email"
   value="<?php
@@ -61,15 +58,12 @@ require 'includes/form_handlers/register_handler.php';
   ?>" 
    required>
   </div>
-  
   <div class="form-control">
   <input name="regPasswordOne" type="password" placeholder="Password" required>
   </div>
-  
   <div class="form-control">
   <input name="regPasswordTwo" type="password" placeholder="Confirm Password" required>
   </div>
-  
   <div class="form-control">
   <input name="registerButton" type="submit" value="Submit">
   </div>
@@ -79,13 +73,11 @@ require 'includes/form_handlers/register_handler.php';
  <a href="login.php">Sign In</a></p> 
   </form>
   </div>
-
   <!-- Footer -->
   <div class="footer-container">
-        <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ</p>
+  <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ |  Icons made by <a href="https://www.flaticon.com/authors/vaadin" title="Vaadin">Vaadin</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
     </div>
   </div> 
-
   <script src="scripts/messages.js"></script> 
 </body>
 </html>

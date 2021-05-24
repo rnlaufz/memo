@@ -3,12 +3,7 @@
 require 'config/config.php';
 require "includes/header.php";
 require 'includes/form_handlers/add_card_handler.php';
-
-
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +33,6 @@ require 'includes/form_handlers/add_card_handler.php';
    <?php
     if(in_array("Please add question and answer.", $errorArray)) echo "<span class='error'>Please add question and answer. <br></span>";
   ?>
-
   <!-- Main content -->
   <div class="form-container">
   <form action="newCard.php" method="POST">
@@ -49,8 +43,7 @@ require 'includes/form_handlers/add_card_handler.php';
     if(isset($_SESSION['question'])){
       echo $_SESSION['question'];
     }
-  ?>" 
-  >
+  ?>">
   </div>
   <div class="form-control">
   <input name="answer" type="text" placeholder="Answer" required
@@ -58,8 +51,7 @@ require 'includes/form_handlers/add_card_handler.php';
     if(isset($_SESSION['answer'])){
       echo $_SESSION['answer'];
     }
-  ?>" 
-  >
+  ?>">
   </div>
   <div class="form-control">
   <input name="addCard" type="submit" value="Add">
@@ -69,11 +61,10 @@ require 'includes/form_handlers/add_card_handler.php';
   </div>
  <!-- Footer -->
  <div class="footer-container">
-        <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ</p>
+ <p>MEMO Copyright 2021 &copy; All rights reserved | Build by /RZ |  Icons made by <a href="https://www.flaticon.com/authors/vaadin" title="Vaadin">Vaadin</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
     </div>
   </div>
     </div>
-
     <!-- Import font awesome -->
     <script src="https://kit.fontawesome.com/415bbac1bd.js" crossorigin="anonymous"></script>
 </body>
