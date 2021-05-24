@@ -21,11 +21,14 @@ html, body {
 
 /* Utility */
 .error, .message {
+    height: 50px;
+    position: relative;
+    top: 10%;
     display: block;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: bold;
-    padding: 20px 0;
+    padding: 5px 0;
     color: #d31a90;
 }
 .message {
